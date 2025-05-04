@@ -20,3 +20,35 @@ next run
 npm start or npm run dev
 
 
+
+## backend  created ++++++++
+
+mkdir fertilizer-tracker
+cd fertilizer-tracker
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
+npm install --save-dev @nomicfoundation/hardhat-toolbox
+add hardhat.config.js
+create contracts/FertilizerTracker.sol
+create scripts/deploy.js
+## runninf++++  termine 1
+npm init -y
+npm install express dotenv cors ethers
+npx hardhat compile
+npx hardhat node
+# Open new terminal 2
+npx hardhat run scripts/deploy.js --network localhost
+
+# Open new terminal 3
+
+## frontend creation ===================================
+
+npm create vite@latest frontend -- --template react
+cd frontend
+npm install
+npm install ethers
+npm run dev
+=================================
+
+
