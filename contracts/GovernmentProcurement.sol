@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
 contract GovernmentProcurement {
+
     address public government;
 
     enum Status { Created, Completed, Paid }
@@ -14,7 +15,7 @@ contract GovernmentProcurement {
         Status status;
     }
 
-    uint public contractCount;
+    uint public contractCount = 0;
     mapping(uint => Contract) public contracts;
 
     modifier onlyGovernment() {
@@ -35,6 +36,7 @@ contract GovernmentProcurement {
     event ContractCompleted(uint contractId);
     event PaymentReleased(uint contractId, uint amount);
 
+    // Government creates a new procurement contract
     function createContract(address payable supplier, string memory description) public payable onlyGovernment {
         require(msg.value > 0, "Must send funds with the contract");
 
@@ -50,20 +52,27 @@ contract GovernmentProcurement {
         contractCount++;
     }
 
+    // Supplier marks the contract as completed
     function markCompleted(uint contractId) public onlySupplier(contractId) {
-        require(contracts[contractId].status == Status.Created, "Already completed or paid");
-        contracts[contractId].status = Status.Completed;
+        Contract storage c = contracts[contractId];
+        require(c.status == Status.Created, "Contract must be in 'Created' status");
+
+        c.status = Status.Completed;
         emit ContractCompleted(contractId);
     }
 
+    // Government verifies and releases payment
     function releasePayment(uint contractId) public onlyGovernment {
         Contract storage c = contracts[contractId];
-        require(c.status == Status.Completed, "Contract not completed");
+        require(c.status == Status.Completed, "Contract must be marked as completed");
+        
         c.status = Status.Paid;
         c.supplier.transfer(c.amount);
+
         emit PaymentReleased(contractId, c.amount);
     }
 
+    // Get contract status
     function getContractStatus(uint contractId) public view returns (Status) {
         return contracts[contractId].status;
     }
