@@ -69,11 +69,8 @@ button:focus-visible {
 
 
 
-
-
-
 .full-width-container {
-  border: 2px solid red;
+  border: 2px solid rgb(134, 130, 130);
 }
 
 /* Full width override for Bootstrap */
@@ -127,6 +124,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  display: flex;
 }
 
 /* Other existing styles... */

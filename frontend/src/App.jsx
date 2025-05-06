@@ -267,7 +267,7 @@ function App() {
                 <h5 className="card-title mb-1 small">Account Information</h5>
                 <p className="mb-0 small">
                   <span className="text-muted">Connected as:</span> 
-                  <strong className="text-truncate d-inline-block ms-1" style={{maxWidth: "200px"}}>
+                  <strong className="text-truncate d-inline-block ms-1" style={{maxWidth: "335px"}}>
                     {account || "Not connected"}
                   </strong>
                 </p>
@@ -302,7 +302,7 @@ function App() {
                         className="form-control form-control-sm" 
                         id="supplier" 
                         name="supplier" 
-                        placeholder="0x..." 
+                        placeholder="0x...." 
                         required 
                       />
                     </div>
@@ -410,8 +410,8 @@ function App() {
                       <tbody>
                         {filteredContracts.map((c, i) => (
                           <tr key={i}>
-                            <td className="align-middle small">#{c.id.toString()}</td>
-                            <td className="align-middle small text-truncate" style={{maxWidth: "120px"}}>
+                            <td className="align-middle small">{c.id.toString()}</td>
+                            <td className="align-middle small text-truncate" style={{maxWidth: "170px"}}>
                               <span className="d-md-none text-muted">Supplier: </span>
                               {c.supplier}
                             </td>
@@ -462,7 +462,7 @@ function App() {
 
       {/* Footer */}
       <footer className="mt-auto py-2 text-center">
-        <p className="text-muted mb-1 small">Government Procurement DApp - Powered by Ethereum</p>
+        <p className="text-muted mb-1 small">Government Procurement DApp - Developed by Claude</p>
         <p className="small text-muted">Ensure you're connected to the correct network</p>
       </footer>
     </div>
