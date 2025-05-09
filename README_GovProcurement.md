@@ -1,21 +1,19 @@
 
 # Government Procurement DApp – A Decentralized Procurement Management System
 
-**Government Procurement DApp** is a decentralized applic
-
-ation (DApp) built on Ethereum that enables secure, transparent, and efficient procurement processes. It facilitates contract creation, approval, and payment between government entities and suppliers, ensuring accountability and reducing corruption through blockchain technology.
+**Government Procurement DApp** is a decentralized application (DApp) built on Ethereum that enables secure, transparent, and efficient procurement processes. It facilitates contract creation, approval, and payment between government entities and suppliers, ensuring accountability and reducing corruption through blockchain technology.
 
 ---
 
 ## Table of Contents
 
-1. [Features](features)  
-2. [Tech Stack](tech-stack)  
-3. [Project Structure](project-structure)  
-4. [ System Flowchart](system-flowchart)  
-5. [Setup & Installation](setup--installation)  
-6. [ Screenshots (Optional)](screenshots)  
-7. [ Future Enhancements](future-enhancements)  
+1. [Features](#-features)  
+2. [Tech Stack](#-tech-stack)  
+3. [Project Structure](#-project-structure)  
+4. [ System Flowchart](#-system-flowchart)  
+5. [Setup & Installation](#-setup--installation)  
+6. [ Screenshots (Optional)](#-screenshots)  
+7. [ Future Enhancements](#-future-enhancements)  
 
 ---
 
@@ -93,7 +91,7 @@ graph TD
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/claudejesus/gov-procurement-dapp.git
+git clone https://github.com/your-username/gov-procurement-dapp.git
 cd gov-procurement-dapp
 ```
 

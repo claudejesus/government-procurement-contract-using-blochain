@@ -32,7 +32,7 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 add hardhat.config.js
 create contracts/FertilizerTracker.sol
 create scripts/deploy.js
-## runninf++++  termine 1
+## running++++  termine 1
 npm init -y
 npm install express dotenv cors ethers
 npx hardhat compile
