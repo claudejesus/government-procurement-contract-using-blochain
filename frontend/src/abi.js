@@ -281,5 +281,9 @@ export const contractABI = [
     "stateMutability": "nonpayable",
     "type": "function"
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 819acbf40be05a3fbd57bb61010009d553557c1c
 ];

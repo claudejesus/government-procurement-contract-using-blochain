@@ -1115,11 +1115,14 @@
 
 // export default App;
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 819acbf40be05a3fbd57bb61010009d553557c1c
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { contractABI } from "./abi";
@@ -1215,7 +1218,11 @@ function App() {
   async function approveContract(id) {
     try {
       setLoading(true);
+<<<<<<< HEAD
       const tx = await contract.approveContract(id);
+=======
+      const tx = await contract.verifyContract(id);
+>>>>>>> 819acbf40be05a3fbd57bb61010009d553557c1c
       await tx.wait();
       await loadBlockchainData();
     } catch (err) {
@@ -1255,14 +1262,38 @@ function App() {
     }
   }
 
+  // const filteredContracts = contracts.filter(contract => {
+  //   if (activeTab === "all") return true;
+  //   if (activeTab === "created") return Number(contract.status) === 0;
+  //   if (activeTab === "completed") return Number(contract.status) === 1;
+  //   if (activeTab === "verified") return Number(contract.status) === 2;
+  //   if (activeTab === "paid") return Number(contract.status) === 3;
+  //   return true;
+  // });
+
   const filteredContracts = contracts.filter(contract => {
+<<<<<<< HEAD
     if (activeTab === "all") return true;
     if (activeTab === "created") return Number(contract.status) === 0;
     if (activeTab === "completed") return Number(contract.status) === 1;
     if (activeTab === "verified") return Number(contract.status) === 2;
     if (activeTab === "paid") return Number(contract.status) === 3;
     return true;
+=======
+    const isStatusMatch =
+      activeTab === "all" ||
+      (activeTab === "created" && Number(contract.status) === 0) ||
+      (activeTab === "completed" && Number(contract.status) === 1) ||
+      (activeTab === "verified" && Number(contract.status) === 2) ||
+      (activeTab === "paid" && Number(contract.status) === 3);
+  
+    const isGovernment = account === government;
+    const isOwner = contract.supplier.toLowerCase() === account?.toLowerCase();
+  
+    return isGovernment ? isStatusMatch : isOwner && isStatusMatch;
+>>>>>>> 819acbf40be05a3fbd57bb61010009d553557c1c
   });
+  
 
   const statusBadge = (status) => {
     const statusMap = {
