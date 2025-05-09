@@ -6,6 +6,9 @@
 ation (DApp) built on Ethereum that enables secure, transparent, and efficient procurement processes. It facilitates contract creation, approval, and payment between government entities and suppliers, ensuring accountability and reducing corruption through blockchain technology.
 
 ---
+## youtube link ==> 
+``` https://youtu.be/JtVkUmPnmBQ or https://www.youtube.com/watch?v=7KwIBQ0POuQ&t=400s
+```
 
 ## Table of Contents
 
@@ -124,6 +127,7 @@ npm run dev
 ## Screenshots
 
 *(Optional: Include screenshots of contract creation, status views, and role-based UIs.)*
+![dasboard](image.png), 
 
 ---
 
