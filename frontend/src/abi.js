@@ -1,8 +1,35 @@
 export const contractABI = [
+ 
   {
     "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "contractId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ContractCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "contractId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ContractCompleted",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -37,9 +64,15 @@ export const contractABI = [
         "internalType": "uint256",
         "name": "contractId",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
-    "name": "ContractCompleted",
+    "name": "ContractPaid",
     "type": "event"
   },
   {
@@ -50,16 +83,23 @@ export const contractABI = [
         "internalType": "uint256",
         "name": "contractId",
         "type": "uint256"
-      },
+      }
+    ],
+    "name": "ContractVerified",
+    "type": "event"
+  },
+  {
+    "inputs": [
       {
-        "indexed": false,
         "internalType": "uint256",
-        "name": "amount",
+        "name": "contractId",
         "type": "uint256"
       }
     ],
-    "name": "PaymentReleased",
-    "type": "event"
+    "name": "cancelContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [],
@@ -116,6 +156,63 @@ export const contractABI = [
   {
     "inputs": [
       {
+        "internalType": "address payable",
+        "name": "supplier",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      }
+    ],
+    "name": "createContract",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "contractId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getContractDetails",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "supplier",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum GovernmentProcurement.Status",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "contractId",
         "type": "uint256"
@@ -127,6 +224,19 @@ export const contractABI = [
         "internalType": "enum GovernmentProcurement.Status",
         "name": "",
         "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "government",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -159,34 +269,17 @@ export const contractABI = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "government",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
-        "internalType": "address payable",
-        "name": "supplier",
-        "type": "address"
-      },
-      {
-        "internalType": "string",
-        "name": "description",
-        "type": "string"
+        "internalType": "uint256",
+        "name": "contractId",
+        "type": "uint256"
       }
     ],
-    "name": "createContract",
+    "name": "verifyContract",
     "outputs": [],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   }
+  
 ];
